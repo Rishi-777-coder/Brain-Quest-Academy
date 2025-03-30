@@ -1,0 +1,422 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  /* Main container */
+  .sudoku-container {
+    min-height: 100vh;
+    background-color: #0f172a;
+    color: white;
+  }
+  
+  .sudoku-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .sudoku-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+  
+  /* Welcome screen */
+  .welcome-container {
+    max-width: 28rem;
+    margin: 0 auto;
+    background-color: #1e293b;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .welcome-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .welcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .welcome-description {
+    color: #cbd5e1;
+  }
+  
+  .difficulty-selector {
+    margin-bottom: 0.5rem;
+  }
+  
+  .difficulty-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+  }
+  
+  .difficulty-select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    background-color: #334155;
+    border: 1px solid #475569;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .how-to-play {
+    background-color: #334155;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .how-to-play-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  
+  .how-to-play-list {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    color: #cbd5e1;
+    font-size: 0.875rem;
+  }
+  
+  .how-to-play-list li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .start-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .start-button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Game screen */
+  .game-container {
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+  
+  .game-panel {
+    background-color: #1e293b;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .game-stat {
+    background-color: #334155;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .stat-label {
+    color: #94a3b8;
+    font-size: 0.875rem;
+    margin-right: 0.25rem;
+  }
+  
+  .stat-value {
+    font-weight: 500;
+    color: white;
+  }
+  
+  .mistake-low {
+    color: #4ade80;
+  }
+  
+  .mistake-medium {
+    color: #facc15;
+  }
+  
+  .mistake-high {
+    color: #f87171;
+  }
+  
+  .notes-button {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    background-color: #334155;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    cursor: pointer;
+  }
+  
+  .notes-active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+  }
+  
+  /* Sudoku Grid */
+  .sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1px;
+    background-color: #475569;
+    padding: 1px;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sudoku-cell {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #1e293b;
+    color: white;
+    font-size: 1.125rem;
+  }
+  
+  @media (min-width: 640px) {
+    .sudoku-cell {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  
+  .original-cell {
+    background-color: #334155;
+    font-weight: bold;
+  }
+  
+  .selected-cell {
+    background-color: rgba(59, 130, 246, 0.2);
+  }
+  
+  /* Cell borders for 3x3 boxes */
+  .top-edge {
+    border-top: 2px solid #64748b;
+  }
+  
+  .left-edge {
+    border-left: 2px solid #64748b;
+  }
+  
+  .right-edge {
+    border-right: 2px solid #64748b;
+  }
+  
+  .bottom-edge {
+    border-bottom: 2px solid #64748b;
+  }
+  
+  .cell-value {
+    font-size: 1.125rem;
+  }
+  
+  /* Notes styling */
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+  }
+  
+  .note-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .note-value {
+    font-size: 0.5rem;
+    color: #94a3b8;
+  }
+  
+  @media (min-width: 640px) {
+    .note-value {
+      font-size: 0.75rem;
+    }
+  }
+  
+  /* Number pad */
+  .number-pad {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .number-button, .clear-button {
+    height: 2.5rem;
+    border: 1px solid #475569;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  @media (min-width: 640px) {
+    .number-button, .clear-button {
+      height: 3rem;
+    }
+  }
+  
+  .number-button:hover, .clear-button:hover {
+    background-color: #334155;
+  }
+  
+  .number-button:disabled, .clear-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Game actions */
+  .game-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .new-game-button, .back-button {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .new-game-button:hover, .back-button:hover {
+    background-color: #334155;
+  }
+  
+  .back-link {
+    text-decoration: none;
+  }
+  
+  /* Result dialog */
+  .result-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+  
+  .result-dialog {
+    max-width: 28rem;
+    background-color: #1e293b;
+    border-radius: 0.75rem;
+    border: 1px solid #334155;
+  }
+  
+  .result-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .result-emoji {
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .result-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #4ade80;
+  }
+  
+  .result-message {
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+  }
+  
+  .result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .result-actions {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  
+  .play-again-button {
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+  
+  .home-button {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .home-button:hover {
+    background-color: #334155;
+  }
+  
+  .home-link {
+    text-decoration: none;
+  }
+  
+  /* Confetti canvas */
+  .confetti-canvas {
+    position: fixed;
+    pointer-events: none;
+    inset: 0;
+    z-index: 50;
+    opacity: 0.7;
+  }

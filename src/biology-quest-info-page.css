@@ -1,0 +1,162 @@
+/* Biology Quest Info Page CSS */
+.main-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1e1b4b, #0f172a);
+    color: white;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #c7d2fe;
+  }
+  
+  .back-button {
+    border-color: #4338ca;
+    color: #a5b4fc;
+  }
+  
+  .back-button:hover {
+    background-color: #3730a3;
+  }
+  
+  .icon-small {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .content-card {
+    max-width: 48rem;
+    margin: 0 auto;
+    background-color: rgba(49, 46, 129, 0.5);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border: 1px solid rgba(67, 56, 202, 0.5);
+  }
+  
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-icon {
+    width: 5rem;
+    height: 5rem;
+    color: #2dd4bf;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #c7d2fe;
+  }
+  
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #c7d2fe;
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    color: #2dd4bf;
+  }
+  
+  .section-text {
+    color: #a5b4fc;
+  }
+  
+  .card-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .card-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .level-card {
+    background-color: #1e1b4b;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(67, 56, 202, 0.5);
+  }
+  
+  .level-title {
+    font-weight: bold;
+    color: #2dd4bf;
+    margin-bottom: 0.5rem;
+  }
+  
+  .level-text {
+    color: #a5b4fc;
+    font-size: 0.875rem;
+  }
+  
+  .list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #a5b4fc;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .play-button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #4f46e5;
+  }
+  
+  .play-button:hover {
+    background-color: #4338ca;
+  }
+  
+  /* Media queries for responsive design */
+  @media (min-width: 768px) {
+    .card-grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .card-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
